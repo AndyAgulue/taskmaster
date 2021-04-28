@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor preferenceEditor = preferences.edit();
+
         String username = preferences.getString("username", null);
         if(username != null) {
             ((TextView) findViewById(R.id.username)).setText(username);
@@ -37,18 +39,33 @@ public class MainActivity extends AppCompatActivity {
 
         Button buyGroceriesButton = findViewById(R.id.buyGroceries);
         buyGroceriesButton.setOnClickListener(view -> {
+
+            String groceryTask = buyGroceriesButton.getText().toString();
+            preferenceEditor.putString("task", groceryTask);
+            preferenceEditor.apply();
+
             Intent intent = new Intent(MainActivity.this, TaskDetail.class);
             startActivity(intent);
         });
 
         Button walkDogButton = findViewById(R.id.walkDog);
         walkDogButton.setOnClickListener(view -> {
+
+            String walkDogTask = walkDogButton.getText().toString();
+            preferenceEditor.putString("task", walkDogTask);
+            preferenceEditor.apply();
+
             Intent intent = new Intent(MainActivity.this, TaskDetail.class);
             startActivity(intent);
         });
 
         Button sendEmailButton = findViewById(R.id.sendEmails);
         sendEmailButton.setOnClickListener(view -> {
+
+            String emailTask = sendEmailButton.getText().toString();
+            preferenceEditor.putString("task", emailTask);
+            preferenceEditor.apply();
+
             Intent intent = new Intent(MainActivity.this, TaskDetail.class);
             startActivity(intent);
         });
@@ -57,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
         settingsButton.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, SettingsPage.class);
             startActivity(intent);
-
-
         });
     }
 }
