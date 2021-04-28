@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 public class AddTask extends AppCompatActivity {
 
+     static int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,3 +26,7 @@ public class AddTask extends AppCompatActivity {
         });
     }
 }
+
+//  @override
+// protected void onResume() {
+//      super.onResume();
