@@ -12,4 +12,4 @@ An Android  task manager App
 
 4/26/2021- Added task Detail page that is linked to the task buttons on home page, Setting page that lets user input user name
 
-![Landing Page](./app/src/screenshots/taskDetails.png)
+![task Details Page](./app/src/screenshots/taskDetails.png)
