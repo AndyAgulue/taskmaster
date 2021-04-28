@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +18,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor preferencesEditor = preferences.edit();
+        String username = preferences.getString("username", null);
+        if(username != null) {
+            ((TextView) findViewById(R.id.username)).setText(username);
+        }
 
         Button addTaskButton = findViewById(R.id.addTask);
         addTaskButton.setOnClickListener( view -> {
@@ -53,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         settingsButton.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, SettingsPage.class);
             startActivity(intent);
+
+
         });
     }
 }
