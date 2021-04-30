@@ -19,4 +19,6 @@ public class TaskDetail extends AppCompatActivity {
         String task = preferences.getString("task", null);
         ((TextView)findViewById(R.id.taskView)).setText(task);
     }
+
+
 }

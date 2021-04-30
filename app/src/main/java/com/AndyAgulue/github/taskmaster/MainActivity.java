@@ -1,6 +1,8 @@
 package com.AndyAgulue.github.taskmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +11,12 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.AndyAgulue.github.taskmaster.adapter.TaskRecyclerViewAdapter;
+import com.AndyAgulue.github.taskmaster.models.TaskItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,5 +83,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, SettingsPage.class);
             startActivity(intent);
         });
+
+        List<TaskItem> taskItems = new ArrayList<>();
+        taskItems.add(new TaskItem("Oil Change", "Change the Oil in the car and motorcycle"));
+        taskItems.add(new TaskItem("Dog Bath", "Give Symba the dog a bath"));
+        taskItems.add(new TaskItem("Deep Clean", "Deep Clean the garage and donate unwanted stuff"));
+        RecyclerView rv = findViewById(R.id.taskRecyclerView);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setAdapter(new TaskRecyclerViewAdapter(taskItems));
     }
 }

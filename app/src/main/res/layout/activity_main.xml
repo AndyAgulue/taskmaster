@@ -10,13 +10,15 @@
         android:id="@+id/textView"
         android:layout_width="139dp"
         android:layout_height="53dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
         android:text="My Tasks"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
@@ -27,15 +29,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="245dp"
-        android:layout_height="179dp"
-        android:layout_marginBottom="155dp"
+        android:layout_width="251dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="180dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619"
+        app:layout_constraintVertical_bias="0.076"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     <Button
@@ -44,16 +45,17 @@
         android:layout_height="55dp"
         android:layout_marginTop="52dp"
         android:text="All Tasks"
+        app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/addTask"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/addTask"
         android:layout_width="116dp"
         android:layout_height="55dp"
-        android:layout_marginStart="22dp"
         android:text="Add Task"
         app:layout_constraintBottom_toBottomOf="@+id/allTasks"
         app:layout_constraintEnd_toStartOf="@+id/allTasks"
@@ -68,12 +70,13 @@
         android:layout_height="34dp"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="64dp"
+        android:layout_marginBottom="8dp"
         android:text="Buy Groceries"
         app:layout_constraintBottom_toBottomOf="@+id/walkDog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/walkDog"
         app:layout_constraintTop_toTopOf="@+id/walkDog"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/walkDog"
@@ -81,11 +84,13 @@
         android:layout_height="35dp"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="48dp"
         android:text="Walk the Dog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buyGroceries"
-        app:layout_constraintStart_toEndOf="@+id/sendEmails" />
+        app:layout_constraintStart_toEndOf="@+id/sendEmails"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/sendEmails"
@@ -93,38 +98,46 @@
         android:layout_height="36dp"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="22dp"
-        android:layout_marginBottom="43dp"
         android:text="Send Emails"
         app:layout_constraintBottom_toBottomOf="@+id/walkDog"
         app:layout_constraintEnd_toStartOf="@+id/walkDog"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/walkDog"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/walkDog" />
 
     <Button
         android:id="@+id/settingsButton"
         android:layout_width="114dp"
         android:layout_height="42dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="24dp"
         android:text="Settings"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.744" />
 
     <TextView
         android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="62dp"
+        android:layout_height="36dp"
         android:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toTopOf="@+id/walkDog"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/allTasks"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.555" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/taskRecyclerView"
+        android:layout_width="201dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
