@@ -43,26 +43,25 @@
         android:id="@+id/allTasks"
         android:layout_width="115dp"
         android:layout_height="55dp"
-        android:layout_marginTop="52dp"
         android:text="All Tasks"
-        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintBottom_toBottomOf="@+id/addTask"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/addTask"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/addTask"
+        app:layout_constraintVertical_bias="0.178" />
 
     <Button
         android:id="@+id/addTask"
         android:layout_width="116dp"
         android:layout_height="55dp"
         android:text="Add Task"
-        app:layout_constraintBottom_toBottomOf="@+id/allTasks"
+        app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toStartOf="@+id/allTasks"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/allTasks"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.511" />
 
     <Button
         android:id="@+id/buyGroceries"
@@ -90,7 +89,7 @@
         app:layout_constraintEnd_toStartOf="@+id/buyGroceries"
         app:layout_constraintStart_toEndOf="@+id/sendEmails"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.996" />
 
     <Button
         android:id="@+id/sendEmails"
@@ -121,12 +120,12 @@
         android:layout_width="62dp"
         android:layout_height="36dp"
         android:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/walkDog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintVertical_bias="0.763" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskRecyclerView"

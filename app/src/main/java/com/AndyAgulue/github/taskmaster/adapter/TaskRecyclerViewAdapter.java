@@ -31,7 +31,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-       //((TextView)holder.itemView.findViewById(R.id.taskRecyclerView)).setText(taskItemList.get(position).title);
+       ((TextView)holder.itemView.findViewById(R.id.taskFragmentTitle)).setText(taskItemList.get(position).getTitle());
     }
 
     @Override
@@ -39,8 +39,8 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter {
         return taskItemList.size();
     }
 
-    class TaskItemViewHolder extends RecyclerView.ViewHolder {
 
+    class TaskItemViewHolder extends RecyclerView.ViewHolder {
         public TaskItemViewHolder(@NonNull View itemView) {
             super(itemView);
         }
