@@ -3,6 +3,7 @@ package com.AndyAgulue.github.taskmaster;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,10 +21,17 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    TaskmasterDatabase taskmasterDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        taskmasterDatabase = Room.databaseBuilder(getApplicationContext(), TaskmasterDatabase.class, "aagulue_task_master")
+                .allowMainThreadQueries()
+                .build();
+        taskmasterDatabase.taskItemDao().findAll();
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor preferenceEditor = preferences.edit();
