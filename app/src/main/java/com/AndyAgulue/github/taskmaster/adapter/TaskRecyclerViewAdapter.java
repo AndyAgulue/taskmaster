@@ -1,14 +1,18 @@
 package com.AndyAgulue.github.taskmaster.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.AndyAgulue.github.taskmaster.MainActivity;
 import com.AndyAgulue.github.taskmaster.R;
+import com.AndyAgulue.github.taskmaster.SettingsPage;
 import com.AndyAgulue.github.taskmaster.models.TaskItem;
 
 import java.util.List;
@@ -32,6 +36,12 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
        ((TextView)holder.itemView.findViewById(R.id.taskFragmentTitle)).setText(taskItemList.get(position).getTitle());
+
+//        RecyclerView View = findViewById(R.id.taskRecyclerView);
+//        RecyclerView.setOnClickListener(view -> {
+//            Intent intent = new Intent(MainActivity.this, SettingsPage.class);
+//            startActivity(intent);
+//        });
     }
 
     @Override
