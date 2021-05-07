@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         taskmasterDatabase = Room.databaseBuilder(getApplicationContext(), TaskmasterDatabase.class, "aagulue_task_master")
                 .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
                 .build();
         taskmasterDatabase.taskItemDao().findAll();
 

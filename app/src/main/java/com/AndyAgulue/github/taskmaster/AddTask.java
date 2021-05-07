@@ -27,6 +27,7 @@ public class AddTask extends AppCompatActivity {
 
         taskmasterDatabase = Room.databaseBuilder(getApplicationContext(), TaskmasterDatabase.class, "aagulue_task_master")
                 .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
                 .build();
 
         Button addSubmitATask = findViewById(R.id.submitATask);
