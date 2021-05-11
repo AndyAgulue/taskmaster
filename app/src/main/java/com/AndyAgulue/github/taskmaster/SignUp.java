@@ -13,33 +13,34 @@ import com.amplifyframework.core.Amplify;
 
 public class SignUp extends AppCompatActivity {
 
-    void signupConfirmation(){
-        (findViewById(R.id.signUpButton)).setOnClickListener(v->{
-            String email = ((EditText) findViewById(R.id.editTextEmailAddress)).getText().toString();
-            String password = ((EditText) findViewById(R.id.editTextPassword)).getText().toString();
-            Amplify.Auth.signUp(
-                    email,
-                    password,
-                    AuthSignUpOptions.builder()
-                            .userAttribute(AuthUserAttributeKey.email(),email)
-                            .build(),
-                    r ->{
-                        Intent intent = new Intent(SignUp.this,LoginConfirmation.class);
-                        intent.putExtra("email", email);
-                        startActivity(intent);
-                    },
-                    r ->{
-                        Log.i("Sign up successful", "SignupConfirmation: Failed");
-                    }
-            );
-        });
-    }
+//    void signupConfirmation(){
+//        (findViewById(R.id.signUpButton)).setOnClickListener(v->{
+//            String email = ((EditText) findViewById(R.id.editTextEmailAddress)).getText().toString();
+//            String password = ((EditText) findViewById(R.id.editTextPassword)).getText().toString();
+//            Amplify.Auth.signUp(
+//                    email,
+//                    password,
+//                    AuthSignUpOptions.builder()
+//                            .userAttribute(AuthUserAttributeKey.email(),email)
+//                            .build(),
+//                    r ->{
+//                        Intent intent = new Intent(SignUp.this,LoginConfirmation.class);
+//                        Log.i("Sign up successful", "SignupConfirmation: Success");
+//                        intent.putExtra("email", email);
+//                        startActivity(intent);
+//                    },
+//                    r ->{
+//                        Log.i("Sign up successful", "SignupConfirmation: Failed");
+//                    }
+//            );
+//        });
+//    }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        signupConfirmation();
-    }
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState){
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//
+//        signupConfirmation();
+//    }
 }

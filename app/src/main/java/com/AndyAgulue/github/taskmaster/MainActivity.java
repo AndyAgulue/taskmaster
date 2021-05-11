@@ -12,12 +12,15 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.AndyAgulue.github.taskmaster.adapter.TaskRecyclerViewAdapter;
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
 import com.amplifyframework.api.graphql.model.ModelQuery;
+import com.amplifyframework.auth.AuthUserAttributeKey;
+import com.amplifyframework.auth.options.AuthSignUpOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.TaskItem;
 import com.amplifyframework.datastore.generated.model.taskmaster;
@@ -90,9 +93,12 @@ public class MainActivity extends AppCompatActivity {
 
         Button signUpButton = findViewById(R.id.signUpButton);
         signUpButton.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, LoginConfirmation.class);
+            Intent intent = new Intent(MainActivity.this, SignUp.class);
             startActivity(intent);
         });
 
+
+
     }
+
 }
