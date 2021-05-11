@@ -82,15 +82,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Button signInButton = findViewById(R.id.settingsButton);
+        Button signInButton = findViewById(R.id.signInButton);
         signInButton.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, SettingsPage.class);
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
             startActivity(intent);
         });
 
-        Button signUpButton = findViewById(R.id.settingsButton);
+        Button signUpButton = findViewById(R.id.signUpButton);
         signUpButton.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, SettingsPage.class);
+            Intent intent = new Intent(MainActivity.this, LoginConfirmation.class);
             startActivity(intent);
         });
 
