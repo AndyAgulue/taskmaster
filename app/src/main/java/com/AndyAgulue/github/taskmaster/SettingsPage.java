@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class SettingsPage extends AppCompatActivity {
@@ -31,6 +32,10 @@ public class SettingsPage extends AppCompatActivity {
             startActivity(intent);
         });
 
-
+        Button signOutButton = findViewById(R.id.settingsButton);
+        signOutButton.setOnClickListener(view -> {
+            Intent intent = new Intent(SettingsPage.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
 }

@@ -1,0 +1,5 @@
+type TaskItem @model {
+  id: ID!
+  title: String!
+  description: String
+}
